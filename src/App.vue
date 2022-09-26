@@ -1,19 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Card from "./Card.vue";
+import Top from "./Top.vue";
+</script>
 
 <template>
-  <h1 class="underline">Hello</h1>
+  <div class="flex flex-col items-center min-h-screen">
+    <Top />
+    <Card title="Skills" :points="['i like this', 'i like that']" />
+  </div>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
