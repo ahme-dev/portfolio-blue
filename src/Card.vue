@@ -2,12 +2,14 @@
 const props = defineProps<{
   title: string;
   points: string[];
+  darkMode: boolean;
 }>();
 </script>
 
 <template>
   <div
-    class="rounded-lg p-3 w-full bg-true-gray-100 shadow-sm shadow-true-gray-400 duration-300 ease-in hover:(bg-indigo-400 text-light-200 cursor-pointer)"
+    class="rounded-xl p-3 w-full bg-true-gray-200 shadow-md shadow-true-gray-500 hover:(bg-indigo-500 text-true-gray-100 cursor-pointer)"
+    :class="{ 'bg-true-gray-800 text-gray-100': darkMode }"
   >
     <h1>{{ props.title }}</h1>
     <p v-for="point in props.points">
