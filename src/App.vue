@@ -2,8 +2,23 @@
 import { ref } from "vue";
 import Card from "./Card.vue";
 import Top from "./Top.vue";
-const darkMode = ref(true);
-const toggleDarkMode = () => (darkMode.value = !darkMode.value);
+
+// load dark mode from localstorage
+const loadDarkMode = (): boolean => {
+  const darkMode = window.localStorage.getItem("darkMode");
+  if (darkMode === "false") return false;
+  else return true;
+};
+
+const darkMode = ref(loadDarkMode());
+
+// switch between dark and light mode
+const toggleDarkMode = () => {
+  darkMode.value = !darkMode.value;
+
+  // set value in localstorage
+  window.localStorage.setItem("darkMode", darkMode.value.toString());
+};
 </script>
 
 <template>
