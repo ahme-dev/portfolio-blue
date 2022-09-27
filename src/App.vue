@@ -61,7 +61,7 @@ const toggleDarkMode = () => {
     </div>
     <button
       @click="toggleDarkMode"
-      class="bg-indigo-600 text-true-gray-100 rounded-md px-4 py-2 self-center"
+      class="bg-indigo-500 text-true-gray-100 rounded-full my-5 px-5 py-3 self-center"
     >
       {{ darkMode ? "Dark" : "Light" }}
     </button>

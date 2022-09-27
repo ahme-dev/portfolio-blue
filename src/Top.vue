@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="flex flex-col items-left justify-between gap-5 py-5 md:(flex-row items-center px-5 )"
+    class="flex flex-col items-left justify-between gap-5 my-5 md:(flex-row items-center px-5 )"
   >
     <h1 class="text-3xl font-bold">
       My name's
