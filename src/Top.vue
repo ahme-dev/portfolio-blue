@@ -7,7 +7,7 @@
     <h1 class="text-3xl font-bold">
       My name's
       <span
-        class="underline underline-2 underline-offset-4 underline-indigo-400 hover:(text-indigo-400)"
+        class="underline underline-2 underline-offset-4 underline-indigo-500 hover:(text-indigo-500)"
         >Ahmed</span
       >
     </h1>
@@ -19,12 +19,12 @@
     <div class="flex flex-wrap justify-end gap-3 font-bold">
       <a
         href="https://github.com/ahmedkabd"
-        class="underline underline-2 underline-transparent underline-offset-4 hover:(underline underline-2 underline-indigo-400 underline-offset-4)"
+        class="underline underline-2 underline-transparent underline-offset-4 hover:(underline underline-2 underline-indigo-500 underline-offset-4)"
         >Github</a
       >
       <a
         href="mailto:email@ahmed.systems"
-        class="underline underline-2 underline-transparent underline-offset-4 hover:(underline underline-2 underline-indigo-400 underline-offset-4)"
+        class="underline underline-2 underline-transparent underline-offset-4 hover:(underline underline-2 underline-indigo-500 underline-offset-4)"
         >Email</a
       >
     </div>

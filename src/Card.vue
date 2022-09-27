@@ -8,7 +8,7 @@ const props = defineProps<{
 
 <template>
   <div
-    class="rounded-xl p-3 w-full bg-true-gray-200 shadow-md shadow-true-gray-500 hover:(bg-indigo-500 text-true-gray-100 cursor-pointer)"
+    class="rounded-xl p-3 w-full bg-true-gray-200 shadow-sm shadow-true-gray-500 hover:(bg-indigo-500 text-true-gray-100 cursor-pointer)"
     :class="{ 'bg-true-gray-800 text-gray-100': darkMode }"
   >
     <h1>{{ props.title }}</h1>
