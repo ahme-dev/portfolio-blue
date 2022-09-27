@@ -7,7 +7,7 @@
     <h1 class="text-3xl font-bold">
       My name's
       <span
-        class="underline underline-2 underline-offset-4 underline-indigo-400"
+        class="underline underline-2 underline-offset-4 underline-indigo-400 duration-300 hover:(text-indigo-400)"
         >Ahmed</span
       >
     </h1>
