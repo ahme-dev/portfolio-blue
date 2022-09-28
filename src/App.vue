@@ -23,11 +23,11 @@ const toggleDarkMode = () => {
 
 <template>
   <div
-    class="flex flex-col p-5 gap-5 min-h-screen bg-true-gray-100"
+    class="flex flex-col justify-between p-5 gap-5 min-h-screen bg-true-gray-100"
     :class="{ 'bg-true-gray-900 text-true-gray-100': darkMode }"
   >
     <Top />
-    <div class="grid gap-1rem md:(grid-cols-2 p-8 gap-8)">
+    <div class="grid gap-1rem md:(grid-cols-2 px-8 gap-8)">
       <Card
         :darkMode="darkMode"
         title="Skills"
