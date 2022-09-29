@@ -7,24 +7,34 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div
-    class="flex flex-col gap-4 rounded-xl p-5 w-full bg-true-gray-200 shadow-sm shadow-true-gray-500 hover:( bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100 cursor-pointer)"
-    :class="{ 'bg-true-gray-800 text-true-gray-100': props.darkMode }"
-  >
-    <h1 class="text-2xl">{{ props.title }}</h1>
-
-    <div class="flex flex-wrap gap-2 items-stretch justify-start">
-      <p
-        class="p-2 rounded-lg bg-opacity-50 bg-true-gray-400"
-        v-for="point in props.points"
-      >
+  <div class="card" :class="{ 'card-dark': props.darkMode }">
+    <h1 class="title">{{ props.title }}</h1>
+    <div class="points">
+      <p class="point" v-for="point in props.points">
         {{ point }}
       </p>
     </div>
   </div>
 </template>
 
-<style>
-div {
+<style scoped>
+.card {
+  @apply flex flex-col gap-4 
+  @apply rounded-xl p-5 w-full
+  @apply bg-true-gray-200 shadow-sm shadow-true-gray-500
+  @apply hover:( bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100 cursor-pointer);
+}
+.card-dark {
+  @apply bg-true-gray-800 text-true-gray-100;
+}
+.title {
+  @apply text-2xl;
+}
+.points {
+  @apply flex flex-wrap gap-2 items-stretch justify-start;
+}
+.point {
+  @apply rounded-lg p-2
+  @apply bg-opacity-50 bg-true-gray-400;
 }
 </style>

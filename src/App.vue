@@ -22,14 +22,10 @@ const toggleDarkMode = () => {
 </script>
 
 <template>
-  <div
-    class="flex flex-col justify-between p-5 gap-5 min-h-screen bg-true-gray-100"
-    :class="{ 'bg-true-gray-900 text-true-gray-100': darkMode }"
-  >
+  <div class="app" :class="{ 'app-dark': darkMode }">
     <Top />
-    <div
-      class="grid grid-cols-1 gap-1rem md:(grid-cols-2 px-6 gap-6) lg:(grid-cols-3 px-8 gap-8)"
-    >
+
+    <div class="cards">
       <Card
         :darkMode="darkMode"
         title="About"
@@ -83,11 +79,29 @@ const toggleDarkMode = () => {
         :points="['Reading', 'Linux', 'Coding']"
       />
     </div>
-    <button
-      @click="toggleDarkMode"
-      class="bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100 rounded-full my-5 px-5 py-3 self-center"
-    >
+    <button class="button" @click="toggleDarkMode">
       {{ darkMode ? "Dark" : "Light" }}
     </button>
   </div>
 </template>
+
+<style scoped>
+.app {
+  @apply flex flex-col justify-between
+  @apply p-5 gap-5 min-h-screen
+  @apply bg-true-gray-100;
+}
+.app-dark {
+  @apply bg-true-gray-900 text-true-gray-100;
+}
+.cards {
+  @apply grid grid-cols-1 gap-1rem
+  @apply md:(grid-cols-2 px-6 gap-6)
+  @apply lg:(grid-cols-3 px-8 gap-8);
+}
+.button {
+  @apply bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100
+  @apply rounded-full my-5 px-5 py-3
+  @apply self-center;
+}
+</style>
