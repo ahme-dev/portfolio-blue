@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Card from "./Card.vue";
-import Top from "./Top.vue";
+import { info } from "./info";
 
 // load dark mode from localstorage
 const loadDarkMode = (): boolean => {
@@ -23,62 +23,38 @@ const toggleDarkMode = () => {
 
 <template>
   <div class="app" :class="{ 'app-dark': darkMode }">
-    <Top />
+    <!-- Top  -->
+
+    <div class="nav">
+      <h1 class="title">
+        My name's
+        <span class="title-highlight">Ahmed</span>
+      </h1>
+      <p class="paragraph">
+        I'm an aspiring web developer, with skills in linux, general
+        programming, and networking
+      </p>
+
+      <div class="links">
+        <a href="https://github.com/ahmedkabd" class="link">Github</a>
+        <a href="mailto:email@ahmed.systems" class="link">Email</a>
+      </div>
+    </div>
+
+    <!-- Middle -->
 
     <div class="cards">
       <Card
+        v-for="e in info"
+        :class="{ 'row-span-2': e.title == 'Projects' }"
+        :title="e.title"
+        :points="e.items"
         :darkMode="darkMode"
-        title="About"
-        :points="[
-          'In Node Group\'s bootcamp',
-          'Learning MEVN stack',
-          'Making small projects here and there',
-        ]"
-      />
-
-      <Card
-        :darkMode="darkMode"
-        title="Skills"
-        :points="[
-          'Linux',
-          'Javascript/Typescript',
-          'VueJS',
-          'Go',
-          'C#',
-          'Docker',
-        ]"
-      />
-      <Card
-        :darkMode="darkMode"
-        title="Projects"
-        class="row-span-2"
-        :points="[
-          'Centerm, cli tool in golang for modifying system settings',
-          'Journalv, in development electron/vue app for day and dream journaling',
-          'Hawr, react weather app in kurdish with 2 day forecasting and no features at all',
-          'Gettube, windows desktop app in c# that downloads videos',
-          'Subnt, cli utility in c to help with network subnetting',
-        ]"
-      />
-      <Card
-        :darkMode="darkMode"
-        title="Experience"
-        :points="['Data Entry / IT Technician', 'IT Support', 'Translation']"
-      />
-      <Card
-        :darkMode="darkMode"
-        title="Education"
-        :points="[
-          'Diploma in Computer Networking',
-          'Computer Institute of Sulaymaniah',
-        ]"
-      />
-      <Card
-        :darkMode="darkMode"
-        title="Interests"
-        :points="['Reading', 'Linux', 'Coding']"
       />
     </div>
+
+    <!-- Bottom -->
+
     <button class="button" @click="toggleDarkMode">
       {{ darkMode ? "Dark" : "Light" }}
     </button>
@@ -94,11 +70,43 @@ const toggleDarkMode = () => {
 .app-dark {
   @apply bg-true-gray-900 text-true-gray-100;
 }
+
+/* Top */
+
+.nav {
+  @apply flex flex-col items-start justify-between gap-5
+  @apply my-5
+  @apply md:(flex-row items-center px-5);
+}
+.title {
+  @apply text-3xl font-bold;
+}
+.title-highlight {
+  @apply underline underline-2 underline-offset-4 underline-indigo-600
+  @apply hover:(text-indigo-600);
+}
+.paragraph {
+  @apply text-lg;
+}
+.links {
+  @apply flex flex-wrap justify-end gap-3
+  @apply font-bold;
+}
+.link {
+  @apply underline underline-2 underline-transparent underline-offset-4
+  @apply hover:(underline underline-2 underline-indigo-500 underline-offset-4);
+}
+
+/* Middle */
+
 .cards {
   @apply grid grid-cols-1 gap-1rem
   @apply md:(grid-cols-2 px-6 gap-6)
   @apply lg:(grid-cols-3 px-8 gap-8);
 }
+
+/* Bottom */
+
 .button {
   @apply bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100
   @apply rounded-full my-5 px-5 py-3
