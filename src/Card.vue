@@ -8,12 +8,23 @@ const props = defineProps<{
 
 <template>
   <div
-    class=" rounded-xl p-5 w-full bg-true-gray-200 shadow-sm shadow-true-gray-500 hover:(bg-indigo-500 text-true-gray-100 cursor-pointer)"
-    :class="{ 'bg-true-gray-800 text-gray-100': darkMode }"
+    class="flex flex-col gap-4 rounded-xl p-5 w-full bg-true-gray-200 shadow-sm shadow-true-gray-500 hover:( bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100 cursor-pointer)"
+    :class="{ 'bg-true-gray-800 text-true-gray-100': props.darkMode }"
   >
-    <h1>{{ props.title }}</h1>
-    <p v-for="point in props.points">
-      {{ point }}
-    </p>
+    <h1 class="text-2xl">{{ props.title }}</h1>
+
+    <div class="flex flex-wrap gap-2 items-stretch justify-start">
+      <p
+        class="p-2 rounded-lg bg-opacity-50 bg-true-gray-400"
+        v-for="point in props.points"
+      >
+        {{ point }}
+      </p>
+    </div>
   </div>
 </template>
+
+<style>
+div {
+}
+</style>
