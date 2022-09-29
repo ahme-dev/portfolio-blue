@@ -61,6 +61,7 @@ const toggleDarkMode = () => {
           'Journalv, in development electron/vue app for day and dream journaling',
           'Hawr, react weather app in kurdish with 2 day forecasting and no features at all',
           'Gettube, windows desktop app in c# that downloads videos',
+          'Subnt, cli utility in c to help with network subnetting',
         ]"
       />
       <Card
