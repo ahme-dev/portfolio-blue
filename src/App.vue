@@ -100,7 +100,7 @@ const toggleDarkMode = () => {
 /* Middle */
 
 .cards {
-  @apply grid grid-cols-1 gap-1rem
+  @apply grid grid-cols-1 gap-4
   @apply md:(grid-cols-2 px-6 gap-6)
   @apply lg:(grid-cols-3 px-8 gap-8);
 }
