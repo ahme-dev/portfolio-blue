@@ -1,24 +1,25 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import Card from "./Card.vue";
-import { info } from "./info";
+  import { ref } from "vue";
+  import Card from "./Card.vue";
+  import { info } from "./info";
+  import Version from "./Version.vue";
 
-// load dark mode from localstorage
-const loadDarkMode = (): boolean => {
-  const darkMode = window.localStorage.getItem("darkMode");
-  if (darkMode === "false") return false;
-  else return true;
-};
+  // load dark mode from localstorage
+  const loadDarkMode = (): boolean => {
+    const darkMode = window.localStorage.getItem("darkMode");
+    if (darkMode === "false") return false;
+    else return true;
+  };
 
-const darkMode = ref(loadDarkMode());
+  const darkMode = ref(loadDarkMode());
 
-// switch between dark and light mode
-const toggleDarkMode = () => {
-  darkMode.value = !darkMode.value;
+  // switch between dark and light mode
+  const toggleDarkMode = () => {
+    darkMode.value = !darkMode.value;
 
-  // set value in localstorage
-  window.localStorage.setItem("darkMode", darkMode.value.toString());
-};
+    // set value in localstorage
+    window.localStorage.setItem("darkMode", darkMode.value.toString());
+  };
 </script>
 
 <template>
@@ -58,58 +59,60 @@ const toggleDarkMode = () => {
     <button class="button" @click="toggleDarkMode">
       {{ darkMode ? "Dark" : "Light" }}
     </button>
+
+    <Version></Version>
   </div>
 </template>
 
 <style scoped>
-.app {
-  @apply flex flex-col justify-between
+  .app {
+    @apply flex flex-col justify-between
   @apply p-5 gap-5 min-h-screen
   @apply bg-true-gray-100;
-}
-.app-dark {
-  @apply bg-true-gray-900 text-true-gray-100;
-}
+  }
+  .app-dark {
+    @apply bg-true-gray-900 text-true-gray-100;
+  }
 
-/* Top */
+  /* Top */
 
-.nav {
-  @apply flex flex-col items-start justify-between gap-5
+  .nav {
+    @apply flex flex-col items-start justify-between gap-5
   @apply my-5
   @apply md:(flex-row items-center px-5);
-}
-.title {
-  @apply text-3xl font-bold;
-}
-.title-highlight {
-  @apply underline underline-2 underline-offset-4 underline-indigo-600
+  }
+  .title {
+    @apply text-3xl font-bold;
+  }
+  .title-highlight {
+    @apply underline underline-2 underline-offset-4 underline-indigo-600
   @apply hover:(text-indigo-600);
-}
-.paragraph {
-  @apply text-lg;
-}
-.links {
-  @apply flex flex-wrap justify-end gap-3
+  }
+  .paragraph {
+    @apply text-lg;
+  }
+  .links {
+    @apply flex flex-wrap justify-end gap-3
   @apply font-bold;
-}
-.link {
-  @apply underline underline-2 underline-transparent underline-offset-4
+  }
+  .link {
+    @apply underline underline-2 underline-transparent underline-offset-4
   @apply hover:(underline underline-2 underline-indigo-500 underline-offset-4);
-}
+  }
 
-/* Middle */
+  /* Middle */
 
-.cards {
-  @apply grid grid-cols-1 gap-4
+  .cards {
+    @apply grid grid-cols-1 gap-4
   @apply md:(grid-cols-2 px-6 gap-6)
   @apply lg:(grid-cols-3 px-8 gap-8);
-}
+  }
 
-/* Bottom */
+  /* Bottom */
 
-.button {
-  @apply bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100
+  .button {
+    @apply bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100
   @apply rounded-full my-5 px-5 py-3
   @apply self-center;
-}
+  }
 </style>
