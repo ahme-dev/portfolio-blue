@@ -3,8 +3,8 @@
 <template>
   <div class="version">
     <img src="https://img.icons8.com/ios-filled/50/000000/design--v1.png" />
-    <a class="vlink" href="https://ahmed.systems"> A </a>
-    <a class="selected" href="https://b.ahmed.systems"> B </a>
+    <a class="selected" href="https://ahmed.systems"> A </a>
+    <a class="vlink" href="https://b.ahmed.systems"> B </a>
     <a class="vlink" href="https://c.ahmed.systems"> C </a>
   </div>
 </template>
