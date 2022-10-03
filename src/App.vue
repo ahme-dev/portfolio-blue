@@ -73,7 +73,7 @@
     <button class="button" @click="toggleDarkMode">
       <img
         class="pic pic-dark"
-        src="https://img.icons8.com/material/96/000000/light--v1.png"
+        src="https://img.icons8.com/windows/100/000000/light--v1.png"
       />
       <h5>
         {{ darkMode ? "Dark" : "Light" }}
