@@ -7,8 +7,8 @@
   // load dark mode from localstorage
   const loadDarkMode = (): boolean => {
     const darkMode = window.localStorage.getItem("darkMode");
-    if (darkMode === "false") return false;
-    else return true;
+    if (darkMode === "true") return true;
+    else return false;
   };
 
   const darkMode = ref(loadDarkMode());
@@ -57,7 +57,10 @@
     <!-- Bottom -->
 
     <button class="button" @click="toggleDarkMode">
-      {{ darkMode ? "Dark" : "Light" }}
+      <img src="https://img.icons8.com/material/96/000000/light--v1.png" />
+      <h5>
+        {{ darkMode ? "Dark" : "Light" }}
+      </h5>
     </button>
 
     <Version></Version>
@@ -96,16 +99,16 @@
   @apply font-bold;
   }
   .link {
-    @apply underline underline-2 underline-transparent underline-offset-4
-  @apply hover:(underline underline-2 underline-indigo-500 underline-offset-4);
+    @apply underline underline-2 underline-transparent underline-offset-4;
+    @apply hover:(underline underline-2 underline-indigo-500 underline-offset-4);
   }
 
   /* Middle */
 
   .cards {
-    @apply grid grid-cols-1 gap-4
-  @apply md:(grid-cols-2 px-6 gap-6)
-  @apply lg:(grid-cols-3 px-8 gap-8);
+    @apply grid grid-cols-1 gap-4;
+    @apply md:(grid-cols-2 px-6 gap-6);
+    @apply lg:(grid-cols-3 px-8 gap-8);
   }
 
   .cards > *:hover {
@@ -115,8 +118,14 @@
   /* Bottom */
 
   .button {
-    @apply bg-gradient-to-b from-indigo-600 to-indigo-700 text-blue-gray-100
-  @apply rounded-full my-5 px-5 py-3
-  @apply self-center;
+    @apply flex items-center gap-2;
+    @apply bg-gradient-to-b from-indigo-600 to-indigo-700 text-blue-gray-100;
+    @apply rounded-full my-5 px-5 py-3;
+    @apply self-center;
+  }
+
+  .button > img {
+    @apply w-5 opacity-80;
+    filter: invert(100%);
   }
 </style>
