@@ -32,13 +32,27 @@
         <span class="title-highlight">Ahmed</span>
       </h1>
       <p class="paragraph">
-        I'm an aspiring web developer, with skills in linux, general
-        programming, and networking
+        I'm an aspiring web developer, with skills in linux, programming, and
+        networking
       </p>
 
       <div class="links">
-        <a href="https://github.com/ahmedkabd" class="link">Github</a>
-        <a href="mailto:email@ahmed.systems" class="link">Email</a>
+        <a href="https://github.com/ahmedkabd" class="link">
+          <img
+            class="pic"
+            :class="{ 'pic-dark': darkMode }"
+            src="https://img.icons8.com/windows/128/000000/github.png"
+          />
+          Github</a
+        >
+        <a href="mailto:email@ahmed.systems" class="link">
+          <img
+            class="pic"
+            :class="{ 'pic-dark': darkMode }"
+            src="https://img.icons8.com/windows/128/000000/email.png"
+          />
+          Email</a
+        >
       </div>
     </div>
 
@@ -57,7 +71,10 @@
     <!-- Bottom -->
 
     <button class="button" @click="toggleDarkMode">
-      <img src="https://img.icons8.com/material/96/000000/light--v1.png" />
+      <img
+        class="pic pic-dark"
+        src="https://img.icons8.com/material/96/000000/light--v1.png"
+      />
       <h5>
         {{ darkMode ? "Dark" : "Light" }}
       </h5>
@@ -69,9 +86,9 @@
 
 <style scoped>
   .app {
-    @apply flex flex-col justify-between
-  @apply p-5 gap-5 min-h-screen
-  @apply bg-blue-gray-100;
+    @apply flex flex-col justify-between;
+    @apply p-5 gap-5 min-h-screen;
+    @apply bg-blue-gray-100;
   }
   .app-dark {
     @apply bg-true-gray-900 text-blue-gray-100;
@@ -80,25 +97,26 @@
   /* Top */
 
   .nav {
-    @apply flex flex-col items-start justify-between gap-5
-  @apply my-5
-  @apply md:(flex-row items-center px-5);
+    @apply flex flex-col items-start justify-between gap-5;
+    @apply my-5;
+    @apply md:(flex-row items-center px-5);
   }
   .title {
     @apply text-3xl font-bold;
   }
   .title-highlight {
-    @apply underline underline-2 underline-offset-4 underline-indigo-600
-  @apply hover:(text-indigo-600);
+    @apply underline underline-2 underline-offset-4 underline-indigo-600;
+    @apply hover:(text-indigo-600);
   }
   .paragraph {
-    @apply text-lg;
+    @apply text-base;
   }
   .links {
-    @apply flex flex-wrap justify-end gap-3
-  @apply font-bold;
+    @apply flex flex-wrap justify-end gap-3;
+    @apply font-bold;
   }
   .link {
+    @apply flex flex-row gap-2;
     @apply underline underline-2 underline-transparent underline-offset-4;
     @apply hover:(underline underline-2 underline-indigo-500 underline-offset-4);
   }
@@ -124,8 +142,11 @@
     @apply self-center;
   }
 
-  .button > img {
-    @apply w-5 opacity-80;
+  /* pictures */
+  .pic {
+    @apply w-6 opacity-80;
+  }
+  .pic-dark {
     filter: invert(100%);
   }
 </style>
