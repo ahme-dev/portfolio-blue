@@ -22,7 +22,7 @@
     @apply flex flex-col gap-4 
   @apply rounded-xl p-5 w-full
   @apply bg-true-gray-200 shadow-sm shadow-true-gray-500
-  @apply hover:(bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100 cursor-pointer);
+  @apply hover:( bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100 cursor-pointer);
   }
   .card-dark {
     @apply bg-true-gray-800 text-true-gray-100;

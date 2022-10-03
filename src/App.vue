@@ -108,6 +108,10 @@
   @apply lg:(grid-cols-3 px-8 gap-8);
   }
 
+  .cards > *:hover {
+    scale: 1.03;
+  }
+
   /* Bottom */
 
   .button {
