@@ -21,11 +21,11 @@
   .card {
     @apply flex flex-col gap-4 
   @apply rounded-xl p-5 w-full
-  @apply bg-true-gray-200 shadow-sm shadow-true-gray-500
-  @apply hover:( bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100 cursor-pointer);
+  @apply bg-blue-gray-200 shadow-sm shadow-blue-gray-500
+  @apply hover:( bg-gradient-to-b from-indigo-600 to-indigo-700 text-blue-gray-100 cursor-pointer);
   }
   .card-dark {
-    @apply bg-true-gray-800 text-true-gray-100;
+    @apply bg-true-gray-800 text-blue-gray-100;
   }
   .title {
     @apply text-2xl;
@@ -35,7 +35,7 @@
   }
   .point {
     @apply rounded-lg p-2
-  @apply bg-opacity-50 bg-true-gray-400;
-    @apply hover:(bg-indigo-200 text-true-gray-800);
+  @apply bg-opacity-50 bg-blue-gray-400;
+    @apply hover:(bg-indigo-200 text-blue-gray-800);
   }
 </style>

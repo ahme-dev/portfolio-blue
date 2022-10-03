@@ -68,10 +68,10 @@
   .app {
     @apply flex flex-col justify-between
   @apply p-5 gap-5 min-h-screen
-  @apply bg-true-gray-100;
+  @apply bg-blue-gray-100;
   }
   .app-dark {
-    @apply bg-true-gray-900 text-true-gray-100;
+    @apply bg-true-gray-900 text-blue-gray-100;
   }
 
   /* Top */
@@ -115,7 +115,7 @@
   /* Bottom */
 
   .button {
-    @apply bg-gradient-to-b from-indigo-600 to-indigo-700 text-true-gray-100
+    @apply bg-gradient-to-b from-indigo-600 to-indigo-700 text-blue-gray-100
   @apply rounded-full my-5 px-5 py-3
   @apply self-center;
   }
