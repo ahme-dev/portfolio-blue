@@ -7,7 +7,11 @@
 </script>
 
 <template>
-  <div class="card" @click="" :class="{ 'card-dark': props.darkMode }">
+  <div
+    v-motion-slide-visible-left
+    class="card"
+    :class="{ 'card-dark': props.darkMode }"
+  >
     <h1 class="title">{{ props.title }}</h1>
     <div class="points">
       <p class="point" v-for="point in props.points">
