@@ -4,26 +4,14 @@
   import { info } from "./info";
   import Version from "./Version.vue";
 
-  // load dark mode from localstorage
-  const loadDarkMode = (): boolean => {
-    const darkMode = window.localStorage.getItem("darkMode");
-    if (darkMode === "true") return true;
-    else return false;
-  };
+  import { useDark, useToggle } from "@vueuse/core";
 
-  const darkMode = ref(loadDarkMode());
-
-  // switch between dark and light mode
-  const toggleDarkMode = () => {
-    darkMode.value = !darkMode.value;
-
-    // set value in localstorage
-    window.localStorage.setItem("darkMode", darkMode.value.toString());
-  };
+  const isDark = useDark();
+  const toggleDark = useToggle(isDark);
 </script>
 
 <template>
-  <div class="app" :class="{ 'app-dark': darkMode }">
+  <div class="app">
     <!-- Top  -->
 
     <div class="nav">
@@ -40,7 +28,7 @@
         <a href="https://github.com/ahmedkabd" class="link">
           <img
             class="pic"
-            :class="{ 'pic-dark': darkMode }"
+            :class="{ 'pic-dark': isDark }"
             src="https://img.icons8.com/windows/128/000000/github.png"
           />
           Github</a
@@ -48,7 +36,7 @@
         <a href="mailto:email@ahmed.systems" class="link">
           <img
             class="pic"
-            :class="{ 'pic-dark': darkMode }"
+            :class="{ 'pic-dark': isDark }"
             src="https://img.icons8.com/windows/128/000000/email.png"
           />
           Email</a
@@ -64,19 +52,18 @@
         :class="{ 'row-span-2': e.title == 'Projects' }"
         :title="e.title"
         :points="e.items"
-        :darkMode="darkMode"
       />
     </div>
 
     <!-- Bottom -->
 
-    <button class="button" @click="toggleDarkMode">
+    <button class="button" @click="toggleDark()">
       <img
         class="pic pic-dark"
         src="https://img.icons8.com/windows/100/000000/light--v1.png"
       />
       <h5>
-        {{ darkMode ? "Dark" : "Light" }}
+        {{ isDark ? "Dark" : "Light" }}
       </h5>
     </button>
 
@@ -89,9 +76,7 @@
     @apply flex flex-col justify-between;
     @apply p-5 gap-5 min-h-screen;
     @apply bg-blue-gray-100;
-  }
-  .app-dark {
-    @apply bg-true-gray-900 text-blue-gray-100;
+    @apply dark:( bg-true-gray-900 text-blue-gray-100);
   }
 
   /* Top */
