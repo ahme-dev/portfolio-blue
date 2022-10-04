@@ -27,15 +27,14 @@
       <div class="links">
         <a href="https://github.com/ahmedkabd" class="link">
           <img
-            class="pic"
-            :class="{ 'pic-dark': isDark }"
+            class="icon"
             src="https://img.icons8.com/windows/128/000000/github.png"
           />
           Github</a
         >
         <a href="mailto:email@ahmed.systems" class="link">
           <img
-            class="pic"
+            class="icon"
             :class="{ 'pic-dark': isDark }"
             src="https://img.icons8.com/windows/128/000000/email.png"
           />
@@ -57,9 +56,9 @@
 
     <!-- Bottom -->
 
-    <button class="button" @click="toggleDark()">
+    <button class="button dark" @click="toggleDark()">
       <img
-        class="pic pic-dark"
+        class="icon"
         src="https://img.icons8.com/windows/100/000000/light--v1.png"
       />
       <h5>
@@ -128,10 +127,8 @@
   }
 
   /* pictures */
-  .pic {
+  .icon {
     @apply w-6 opacity-80;
-  }
-  .pic-dark {
-    filter: invert(100%);
+    @apply dark:(filter invert);
   }
 </style>
