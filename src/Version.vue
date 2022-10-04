@@ -2,16 +2,23 @@
 
 <template>
   <div class="version">
-    <img src="https://img.icons8.com/ios-filled/50/000000/design--v1.png" />
+    <img
+      src="https://img.icons8.com/ios-filled/100/000000/paint.png"
+      alt="brush icon"
+    />
     <a class="selected" href="https://ahmed.systems"> A </a>
     <a class="vlink" href="https://b.ahmed.systems"> B </a>
     <a class="vlink" href="https://c.ahmed.systems"> C </a>
+    <a class="vlink" href="https://d.ahmed.systems"> D </a>
   </div>
 </template>
 
 <style scoped>
-  .version {
+  .version,
+  .version * {
     font-family: sans-serif;
+  }
+  .version {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
@@ -19,8 +26,9 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    background-color: aliceblue;
-    border: 2px solid #333;
+    background-color: #222;
+    color: whitesmoke;
+    box-shadow: 0px 0px 8px gray;
     border-radius: 1rem;
     padding: 0.2rem 0.5rem;
   }
@@ -29,20 +37,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #333;
     text-decoration: none;
     border-radius: 50%;
     padding: 0.1rem 0.5rem;
   }
   .version > .selected {
-    background-color: mediumslateblue;
+    background-color: darkseagreen;
     cursor: default;
+    color: #222;
   }
   .version > .vlink:hover {
-    background-color: mediumaquamarine;
+    background-color: darkgray;
+    color: #222;
   }
   .version > img {
+    padding: 0.3rem;
     width: 2rem;
-    opacity: 0.9;
+    filter: invert(1);
+    opacity: 0.8;
   }
 </style>
