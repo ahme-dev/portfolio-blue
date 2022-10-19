@@ -65,8 +65,6 @@
         {{ isDark ? "Dark" : "Light" }}
       </h5>
     </button>
-
-    <Version></Version>
   </div>
 </template>
 
