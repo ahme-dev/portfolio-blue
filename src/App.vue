@@ -25,7 +25,7 @@
       </p>
 
       <div class="links">
-        <a href="https://github.com/ahmedkabd" class="link">
+        <a href="https://github.com/ahmedkapro" class="link">
           <img
             class="icon"
             src="https://img.icons8.com/windows/128/000000/github.png"
